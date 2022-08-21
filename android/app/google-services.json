@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836395927006",
+    "project_id": "healthical-5cd7a",
+    "storage_bucket": "healthical-5cd7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836395927006:android:28d9d82bbf8b2fd376c94f",
+        "android_client_info": {
+          "package_name": "com.example.healthical_flutter_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836395927006-toal1avdds36givh5p6atlqmjjl0i7bl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEWFcCd8tz8AB0_49BcBlTMlGe9OO4cUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836395927006-toal1avdds36givh5p6atlqmjjl0i7bl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

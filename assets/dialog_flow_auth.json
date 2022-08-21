@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "healthicalbot-nwkh",
+  "private_key_id": "fc68b4a76f205963be7c12c2f5cebc506cb244bf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1/P3E8SaQuP5Z\ncyvbZuEjy1Kzz8scd/vsOD2gJthtOD/AOX27tVdfvAXA8jPYVjQXt/3buS32mUQu\nWMjUnE11/Gs2ERntmpyeHsNRKm6GWPKkXt9BMotpASaklhNmEIToESh79AFE87Bm\nx0aEf+LYr1tCMxnaghiJUpmlMamEjvcT+GTmteFtIhPhO3IF4c5WKcb4a5QiabpS\nDCJid0v7tNPe4uliDD+uf8f6cQ1qaQGf8Vpl33LhQp3ENRjVCWwHzJAF7y2y6ub+\nmEzalKQh07XffiuqRCZUfkXy6FLXtZGvStPHq6Oaq4Wd5RWQ7GQjeDxUc/qi1BSQ\nAiwmoU7zAgMBAAECggEABSFaKAyiSS8l4HCqOlemniMztCT19Vn+jJSzTAn8TOvq\nhCk6valpiqXaxasuQfmAI3EI44JPZOXCMcpH8xJq7poMjawivnt+0chNOkMHdZsZ\nT//qrERYAMBLDhW6+0QY8w/Uw9XHmWGDRgp1FvQh+XjMCkw1fN7xASIGec0yGa3/\n2m3BsKMsasyKtj7wKiHgAcSFtBtovRksh5IR4roRMF2LdE/HFE5xPRAwA6bWSfZ7\nfdvIpRtxmJpNxG4AvC0qelqw/Q2upWRcHA07iQhFXCdjAc1CbEtGbWrXYjjP/kzY\n0mGxKUl+bCb2i9MltASicK78M0+70EAOg+LWCg0tOQKBgQDr3jKVZxtyjUUOZ7Cy\nnuRPr8yl7vfW6cplec9bmgrw6u5Uq9qNDjEc5Rkur5f9vBf3kgCRi9EFZss3cJDw\nziz6VmceOM7st+Xv5zj5J2NpdY1JLO+tDwBP1l43rWDzfIgDhMnZQqseZnDW2uGy\ntrrqBdY1vUwLsWj7kSLQMVo/6QKBgQDFhYCC4ueJjVpr+TWcixTBJD8iMmH0cETC\n1PejaFWkg8Ch/8zuXTTIGEE+n5nz7R5Un/NY+aMUlQP+F9APD2WIjbExQ9pjnJYL\nDphnaKu8czidcktly7xKPNLVPjoXogHSK4qInxmkFXvH8NoFOnMX95tkAwnY6dCy\n4XKqMamKewKBgQCagkTaj99wC9DH3e7nI6Tl+oBx1nfuBdp63O+TzvYJ2avkNWuG\naVyM1BrJ9Wb4ZSXCHJdYwKFdC3hlycx4ombeWolUR9xtPw5WOD6fIElEBShXXiNn\nV2NZ6VBw4peXCOXEgFEFjGGyGWMjq+CbhI4uzUIElAtjwYTG/s0yWpIHOQKBgHtG\nNMx7XNImXFai9Gi9DLj2LEjldOkf4GpQjDV5+mlwqRryES57EWQIbz/sUCNCy/k4\n0qGnO7auwg0lQ38CtvWgqQP8OyKMKcDA3TE8zGIS7zSkjpX7r4oNp+/apFr3i3dm\nIVHfKhuUJOrGUOuObSJ6MIscslqkotHhjrTVxeBdAoGAOVaUwJ/sUfE5W5Y3B73C\ncC5uD9PyImHi8Tx848f0LvIhDXgY91IBAeoI6t+7sNDK56yb2dzSVuE4+QElmjkj\nI2Fml6BfjHfyRjxSVAm0DBROswZuoc03QSb1nsehFPoPFuPfrwP3KSo8xXQgd0Kt\n1vTquyAVoQHX3g2Uvu4TZaA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "healthical-bot@healthicalbot-nwkh.iam.gserviceaccount.com",
+  "client_id": "116402190892954843269",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/healthical-bot%40healthicalbot-nwkh.iam.gserviceaccount.com"
+}
