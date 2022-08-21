@@ -1,29 +1,64 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'dart:ui';
+import 'dart:async';
+import 'package:url_launcher/link.dart';
 
 import 'package:flutter/material.dart';
 import 'package:healthical_flutter_clone/screens/bmi_calculator_screen.dart';
 import 'package:healthical_flutter_clone/screens/health_bot_screen.dart';
 import 'package:pretty_gauge/pretty_gauge.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class ScoreScreen extends StatelessWidget {
+class ScoreScreen extends StatefulWidget {
   final double bmiScore;
 
   final int age;
 
+  ScoreScreen({Key? key, required this.bmiScore, required this.age})
+      : super(key: key);
+
+  @override
+  State<ScoreScreen> createState() => _ScoreScreenState();
+}
+
+class _ScoreScreenState extends State<ScoreScreen> {
   String? bmiStatus;
 
   String? bmiInterpretation;
 
   Color? bmiStatusColor;
 
-  ScoreScreen({Key? key, required this.bmiScore, required this.age})
-      : super(key: key);
+  Future<void>? _launched;
+  // String _launchUrl =
+  //     'https://www.youtube.com/watch?v=XhBQVBgeQnU&ab_channel=Maherbanhusen';
+
+  Future<void> _launchUniversalLinkIos(Uri url) async {
+    final bool nativeAppLaunchSucceeded = await launchUrl(
+      url,
+      mode: LaunchMode.externalNonBrowserApplication,
+    );
+    if (!nativeAppLaunchSucceeded) {
+      await launchUrl(
+        url,
+        mode: LaunchMode.inAppWebView,
+      );
+    }
+  }
+
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
+    if (snapshot.hasError) {
+      return Text("Error: ${snapshot.error}");
+    } else {
+      return const Text("");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final Uri _launchUrl = Uri.parse(
+        'https://youtube.com/playlist?list=PLmTVoL6WRflnOVYfGeVyjFr3cC9bAy9K6');
     setBmiInterpretation();
     return Scaffold(
       appBar: AppBar(
@@ -54,10 +89,10 @@ class ScoreScreen extends StatelessWidget {
                 GaugeSegment('Obese', 10.1, Colors.pink),
               ],
               valueWidget: Text(
-                bmiScore.toStringAsFixed(1),
+                widget.bmiScore.toStringAsFixed(1),
                 style: const TextStyle(fontSize: 40),
               ),
-              currentValue: bmiScore.toDouble(),
+              currentValue: widget.bmiScore.toDouble(),
               needleColor: Colors.blue,
             ),
             const SizedBox(
@@ -91,7 +126,7 @@ class ScoreScreen extends StatelessWidget {
                 ElevatedButton(
                     onPressed: () {
                       Share.share(
-                          "Your BMI is ${bmiScore.toStringAsFixed(1)} at age $age");
+                          "Your BMI is ${widget.bmiScore.toStringAsFixed(1)} at age ${widget.age}");
                     },
                     child: const Text("Share")),
               ],
@@ -103,9 +138,9 @@ class ScoreScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
+                  onTap: () => setState(() {
+                    _launched = _launchUniversalLinkIos(_launchUrl);
+                  }),
                   child: Card(
                     elevation: 10,
                     shape: RoundedRectangleBorder(
@@ -137,6 +172,7 @@ class ScoreScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                // FutureBuilder<void>(future: _launched, builder: _launchStatus),
                 SizedBox(
                   width: 10,
                 ),
@@ -175,6 +211,7 @@ class ScoreScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                FutureBuilder<void>(future: _launched, builder: _launchStatus),
               ],
             ),
           ]),
@@ -184,19 +221,19 @@ class ScoreScreen extends StatelessWidget {
   }
 
   void setBmiInterpretation() {
-    if (bmiScore > 30) {
+    if (widget.bmiScore > 30) {
       bmiStatus = "Obese";
       bmiInterpretation = "Please work to reduce obesity";
       bmiStatusColor = Colors.pink;
-    } else if (bmiScore >= 25) {
+    } else if (widget.bmiScore >= 25) {
       bmiStatus = "Overweight";
       bmiInterpretation = "Do regular exercise & reduce the weight";
       bmiStatusColor = Colors.orange;
-    } else if (bmiScore >= 18.5) {
+    } else if (widget.bmiScore >= 18.5) {
       bmiStatus = "Normal";
       bmiInterpretation = "Enjoy, You are fit";
       bmiStatusColor = Colors.green;
-    } else if (bmiScore < 18.5) {
+    } else if (widget.bmiScore < 18.5) {
       bmiStatus = "Underweight";
       bmiInterpretation = "Try to increase the weight";
       bmiStatusColor = Colors.red;
