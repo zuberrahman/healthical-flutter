@@ -2,6 +2,7 @@
 
 import 'dart:ui';
 import 'dart:async';
+import 'package:healthical_flutter_clone/screens/recipe_home.dart';
 import 'package:url_launcher/link.dart';
 
 import 'package:flutter/material.dart';
@@ -57,8 +58,22 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Uri _launchUrl = Uri.parse(
-        'https://youtube.com/playlist?list=PLmTVoL6WRflnOVYfGeVyjFr3cC9bAy9K6');
+    Uri _launchUrl = Uri.parse(
+        'https://youtube.com/playlist?list=PLmTVoL6WRfll1BTzJ7_4W5rUhZF6Zjtjc');
+    if (widget.bmiScore > 30) {
+      _launchUrl = Uri.parse(
+          'https://youtube.com/playlist?list=PLmTVoL6WRfll1BTzJ7_4W5rUhZF6Zjtjc');
+    } else if (widget.bmiScore >= 25) {
+      _launchUrl = Uri.parse(
+          'https://youtube.com/playlist?list=PLmTVoL6WRfll1BTzJ7_4W5rUhZF6Zjtjc');
+    } else if (widget.bmiScore >= 18.5) {
+      _launchUrl = Uri.parse(
+          'https://youtube.com/playlist?list=PLmTVoL6WRflkNT3OiQpgy0o5g3LwjbRoO');
+    } else if (widget.bmiScore < 18.5) {
+      _launchUrl = Uri.parse(
+          'https://youtube.com/playlist?list=PLmTVoL6WRflnOVYfGeVyjFr3cC9bAy9K6');
+    }
+
     setBmiInterpretation();
     return Scaffold(
       appBar: AppBar(
@@ -178,7 +193,11 @@ class _ScoreScreenState extends State<ScoreScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Recipe_Home_Screen(),
+                      ),
+                    );
                   },
                   child: Card(
                     elevation: 10,
